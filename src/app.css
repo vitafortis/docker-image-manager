@@ -7,92 +7,92 @@
 @custom-variant touch (@media (pointer: coarse));
 @custom-variant mouse (@media (pointer: fine));
 
-/* The ·modern palette (pg·modern, octo·modern, debrief, Orbital) in cyan: primary hue 200, clear of
-   the green of --success, the amber of --warning and the red of --danger, over faintly cyan-tinted
-   neutrals. Cyan holds less chroma than blue, so the primary's chroma is lower than Orbital's. */
+/* The ·modern palette (pg·modern, octo·modern, debrief, Orbital) in sea green: primary hue 165, clear of
+   debrief's cyan (200) and Orbital's blue (255). --success sits at a yellower 140 so status dots don't
+   read as the brand colour; the amber of --warning and the red of --danger are unchanged. */
 :root {
-	--background: oklch(99% 0.005 200);
+	--background: oklch(99% 0.005 165);
 	--foreground: oklch(14.5% 0 0);
 	--card: oklch(100% 0 0);
 	--card-foreground: oklch(14.5% 0 0);
-	--surface: oklch(97.5% 0.006 200);
-	--muted: oklch(96% 0.005 200);
-	--muted-foreground: oklch(52% 0.01 200);
-	--accent: oklch(94% 0.02 200);
+	--surface: oklch(97.5% 0.006 165);
+	--muted: oklch(96% 0.005 165);
+	--muted-foreground: oklch(52% 0.01 165);
+	--accent: oklch(94% 0.02 165);
 	--accent-foreground: oklch(20.5% 0 0);
-	--border: oklch(90% 0.01 200);
-	--input: oklch(88% 0.012 200);
-	--primary: oklch(58% 0.12 200);
+	--border: oklch(90% 0.01 165);
+	--input: oklch(88% 0.012 165);
+	--primary: oklch(58% 0.12 165);
 	--primary-foreground: oklch(98.5% 0 0);
-	--primary-soft: oklch(58% 0.12 200 / 0.1);
+	--primary-soft: oklch(58% 0.12 165 / 0.1);
 	--primary-ink: color-mix(in oklch, var(--primary) 80%, black);
 	--danger-ink: color-mix(in oklch, var(--danger) 86%, black);
-	--success: oklch(60% 0.15 155);
+	--success: oklch(62% 0.17 140);
 	--warning: oklch(70% 0.16 70);
 	--danger: oklch(58% 0.22 25);
 	/* Filled primary buttons: a muted cyan with depth, calmer than --primary (used for accents). */
-	--primary-solid-top: oklch(54% 0.11 200);
-	--primary-solid-bottom: oklch(48% 0.11 200);
-	--primary-solid-edge: oklch(42% 0.11 200);
+	--primary-solid-top: oklch(54% 0.11 165);
+	--primary-solid-bottom: oklch(48% 0.11 165);
+	--primary-solid-edge: oklch(42% 0.11 165);
 	/* Filled danger buttons: the same depth as primary, in red. */
 	--danger-solid-top: oklch(57% 0.19 25);
 	--danger-solid-bottom: oklch(51% 0.19 25);
 	--danger-solid-edge: oklch(44% 0.16 25);
 	/* Outlined (secondary) buttons: a faint raised surface with a visible edge. */
 	--secondary-top: oklch(100% 0 0);
-	--secondary-bottom: oklch(97% 0.005 200);
-	--secondary-edge: oklch(85% 0.014 200);
+	--secondary-bottom: oklch(97% 0.005 165);
+	--secondary-edge: oklch(85% 0.014 165);
 	--secondary-highlight: oklch(100% 0 0 / 0.8);
 	--ring: var(--primary);
-	--glow: oklch(70% 0.12 200 / 0.13);
+	--glow: oklch(70% 0.12 165 / 0.13);
 	--shadow: 0 1px 3px 0 oklch(0% 0 0 / 0.06), 0 1px 2px -1px oklch(0% 0 0 / 0.06);
-	--shadow-lg: 0 12px 32px -8px oklch(30% 0.05 200 / 0.18), 0 2px 6px oklch(0% 0 0 / 0.05);
-	--syntax-keyword: oklch(52% 0.12 200);
-	--syntax-string: oklch(52% 0.13 155);
+	--shadow-lg: 0 12px 32px -8px oklch(30% 0.05 165 / 0.18), 0 2px 6px oklch(0% 0 0 / 0.05);
+	--syntax-keyword: oklch(52% 0.12 165);
+	--syntax-string: oklch(52% 0.14 265);
 	--syntax-number: oklch(58% 0.16 50);
-	--syntax-comment: oklch(62% 0.01 200);
+	--syntax-comment: oklch(62% 0.01 165);
 	--syntax-type: oklch(55% 0.13 230);
 	--syntax-function: oklch(55% 0.15 320);
 	color-scheme: light;
 }
 
 :root[data-theme='dark'] {
-	--background: oklch(12% 0.01 200);
+	--background: oklch(12% 0.01 165);
 	--foreground: oklch(98.5% 0 0);
-	--card: oklch(14.5% 0.012 200);
+	--card: oklch(14.5% 0.012 165);
 	--card-foreground: oklch(98.5% 0 0);
-	--surface: oklch(13.2% 0.011 200);
-	--muted: oklch(18% 0.01 200);
-	--muted-foreground: oklch(64% 0.012 200);
-	--accent: oklch(20% 0.02 200);
+	--surface: oklch(13.2% 0.011 165);
+	--muted: oklch(18% 0.01 165);
+	--muted-foreground: oklch(64% 0.012 165);
+	--accent: oklch(20% 0.02 165);
 	--accent-foreground: oklch(98.5% 0 0);
-	--border: oklch(22% 0.012 200);
-	--input: oklch(25% 0.014 200);
-	--primary: oklch(74% 0.13 200);
+	--border: oklch(22% 0.012 165);
+	--input: oklch(25% 0.014 165);
+	--primary: oklch(74% 0.13 165);
 	--primary-foreground: oklch(98.5% 0 0);
-	--primary-soft: oklch(74% 0.13 200 / 0.14);
+	--primary-soft: oklch(74% 0.13 165 / 0.14);
 	--primary-ink: color-mix(in oklch, var(--primary) 50%, white);
 	--danger-ink: color-mix(in oklch, var(--danger) 62%, white);
-	--primary-solid-top: oklch(54% 0.11 200);
-	--primary-solid-bottom: oklch(47% 0.11 200);
-	--primary-solid-edge: oklch(40% 0.11 200);
+	--primary-solid-top: oklch(54% 0.11 165);
+	--primary-solid-bottom: oklch(47% 0.11 165);
+	--primary-solid-edge: oklch(40% 0.11 165);
 	--danger-solid-top: oklch(55% 0.17 25);
 	--danger-solid-bottom: oklch(48% 0.17 25);
 	--danger-solid-edge: oklch(41% 0.14 25);
-	--secondary-top: oklch(23% 0.014 200);
-	--secondary-bottom: oklch(19.5% 0.012 200);
-	--secondary-edge: oklch(31% 0.016 200);
+	--secondary-top: oklch(23% 0.014 165);
+	--secondary-bottom: oklch(19.5% 0.012 165);
+	--secondary-edge: oklch(31% 0.016 165);
 	--secondary-highlight: oklch(100% 0 0 / 0.06);
-	--success: oklch(72% 0.17 155);
+	--success: oklch(74% 0.18 140);
 	--warning: oklch(80% 0.15 75);
 	--danger: oklch(68% 0.2 25);
-	--glow: oklch(65% 0.12 200 / 0.2);
+	--glow: oklch(65% 0.12 165 / 0.2);
 	--shadow: 0 1px 3px 0 oklch(0% 0 0 / 0.3), 0 1px 2px -1px oklch(0% 0 0 / 0.3);
 	--shadow-lg: 0 16px 40px -12px oklch(0% 0 0 / 0.6), 0 0 0 1px oklch(100% 0 0 / 0.02);
-	--syntax-keyword: oklch(78% 0.12 200);
-	--syntax-string: oklch(80% 0.13 155);
+	--syntax-keyword: oklch(78% 0.12 165);
+	--syntax-string: oklch(80% 0.1 265);
 	--syntax-number: oklch(82% 0.12 60);
-	--syntax-comment: oklch(52% 0.015 200);
+	--syntax-comment: oklch(52% 0.015 165);
 	--syntax-type: oklch(78% 0.1 220);
 	--syntax-function: oklch(78% 0.13 330);
 	color-scheme: dark;
