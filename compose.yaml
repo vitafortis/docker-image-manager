@@ -1,0 +1,37 @@
+# Berth — one place to search, inspect, download and share images from all your registries.
+#
+#   docker compose up -d
+#   open http://<this-host>:3060 and create the admin account
+#
+# Registries, people and settings are set up in the web UI.
+services:
+  berth:
+    image: ghcr.io/vitafortis/berth:latest
+    container_name: berth
+    restart: unless-stopped
+    ports:
+      - "3060:3000"
+    # All optional.
+    # environment:
+      # Create the admin here instead of in the setup screen.
+      # BERTH_ADMIN_EMAIL: you@example.com
+      # BERTH_ADMIN_PASSWORD: ${BERTH_ADMIN_PASSWORD}
+      # Manage the credential encryption key yourself. Otherwise a random key is
+      # generated at /data/secret.key: back up the berth-data volume.
+      # BERTH_SECRET_KEY: change-me-to-a-long-random-string
+      # For an ECR registry set to "From the environment" (or use an instance/task role).
+      # AWS_ACCESS_KEY_ID: …
+      # AWS_SECRET_ACCESS_KEY: …
+      # Share links and setup behind a reverse proxy that terminates TLS.
+      # PROTOCOL_HEADER: x-forwarded-proto
+      # HOST_HEADER: x-forwarded-host
+    volumes:
+      # The database (index, links, users, encrypted registry credentials) and the key file.
+      - berth-data:/data
+      # Only for the "Docker host" registry: lists, exports and removes this host's images.
+      # Berth never starts containers, but anyone with this socket could: keep Berth on
+      # your LAN, a VPN, or behind your reverse proxy's sign-in. Drop the line if unused.
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  berth-data:
