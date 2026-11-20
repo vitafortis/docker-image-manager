@@ -194,7 +194,7 @@
 					</p>
 				{:else}
 					<p class="rounded-lg bg-surface px-3 py-2 text-xs text-muted-foreground">
-						Berth uses what the AWS CLI would find in its container: <span class="hash">AWS_ACCESS_KEY_ID</span>/<span class="hash">AWS_SECRET_ACCESS_KEY</span>, an EKS service account (IRSA), an ECS task role, or the EC2
+						Wharf uses what the AWS CLI would find in its container: <span class="hash">AWS_ACCESS_KEY_ID</span>/<span class="hash">AWS_SECRET_ACCESS_KEY</span>, an EKS service account (IRSA), an ECS task role, or the EC2
 						instance role.
 					</p>
 				{/if}
@@ -234,7 +234,7 @@
 				</div>
 			{:else if form.kind === 'docker'}
 				<p class="rounded-lg bg-surface px-3 py-2 text-xs text-muted-foreground">
-					Lists the images on the Docker Engine Berth can reach (mount <span class="hash">/var/run/docker.sock</span>, or set <span class="hash">BERTH_DOCKER_HOST</span>). Downloads are
+					Lists the images on the Docker Engine Wharf can reach (mount <span class="hash">/var/run/docker.sock</span>, or set <span class="hash">WHARF_DOCKER_HOST</span>). Downloads are
 					<span class="hash">docker save</span> exports.
 				</p>
 			{/if}

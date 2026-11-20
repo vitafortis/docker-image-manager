@@ -18,7 +18,7 @@ export const PUT: RequestHandler = handler(async ({ params, request, locals }) =
 	return json({ registry: getRegistry(r.id) });
 });
 
-/** Removes the registry from Berth (its index and share links), never anything in the registry itself. */
+/** Removes the registry from Wharf (its index and share links), never anything in the registry itself. */
 export const DELETE: RequestHandler = handler(async ({ params, locals }) => {
 	requireAdmin(locals);
 	const r = getRegistry(params.id);

@@ -171,7 +171,7 @@ test('deleting a tag on a plain registry removes every tag on its digest', async
 
 test('registry secrets are encrypted at rest and never listed', async () => {
 	const { DatabaseSync } = await import('node:sqlite');
-	const raw = new DatabaseSync(join(dir, 'berth.db')).prepare('SELECT secret FROM registries').get() as { secret: string };
+	const raw = new DatabaseSync(join(dir, 'wharf.db')).prepare('SELECT secret FROM registries').get() as { secret: string };
 	assert.ok(!raw.secret.includes('hunter22'));
 	assert.deepEqual(store.getRegistry(registryId)!.secrets, ['password']);
 	assert.ok(!JSON.stringify(store.listRegistries()).includes('hunter22'));

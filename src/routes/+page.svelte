@@ -80,7 +80,7 @@
 	];
 </script>
 
-<svelte:head><title>Images · Berth</title></svelte:head>
+<svelte:head><title>Images · Wharf</title></svelte:head>
 <svelte:window {onkeydown} />
 
 <div class="h-full overflow-y-auto">
@@ -89,7 +89,7 @@
 	{#if data.registries.length === 0}
 		<div class="px-4 sm:px-8">
 			<div class="card">
-				<EmptyState icon={Layers} title="No registries yet" body="Add a registry (a local registry:2, Amazon ECR, Docker Hub, GitHub Packages, Harbor, or this Docker host) and Berth indexes its images.">
+				<EmptyState icon={Layers} title="No registries yet" body="Add a registry (a local registry:2, Amazon ECR, Docker Hub, GitHub Packages, Harbor, or this Docker host) and Wharf indexes its images.">
 					{#snippet action()}<a href="/registries?add" class="btn btn-primary"><Plus />Add a registry</a>{/snippet}
 				</EmptyState>
 			</div>

@@ -10,7 +10,7 @@ const rfc3986 = (s: string) => encodeURIComponent(s).replace(/[!'()*]/g, (c) => 
 
 /**
  * Signs a request with AWS Signature Version 4 and returns the headers to send. Small enough to
- * keep here rather than pull in the AWS SDK for the three ECR calls Berth makes.
+ * keep here rather than pull in the AWS SDK for the three ECR calls Wharf makes.
  */
 export function signV4(req: {
 	method: string;
@@ -90,7 +90,7 @@ async function webIdentity(file: string, roleArn: string, region: string): Promi
 		Action: 'AssumeRoleWithWebIdentity',
 		Version: '2011-06-15',
 		RoleArn: roleArn,
-		RoleSessionName: process.env.AWS_ROLE_SESSION_NAME || 'berth',
+		RoleSessionName: process.env.AWS_ROLE_SESSION_NAME || 'wharf',
 		WebIdentityToken: readFileSync(file, 'utf8').trim()
 	});
 	const res = await fetch(`https://sts.${region}.amazonaws.com/`, { method: 'POST', body, signal: AbortSignal.timeout(10_000) });

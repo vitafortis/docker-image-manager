@@ -29,7 +29,7 @@ export const GET: RequestHandler = async ({ params, getClientAddress }) => {
 		});
 	} catch (err) {
 		releaseLinkDownload(link.id);
-		console.warn('[berth] share link download failed:', (err as Error).message);
+		console.warn('[wharf] share link download failed:', (err as Error).message);
 		error(502, "The registry couldn't send this image right now; try again in a moment");
 	}
 };

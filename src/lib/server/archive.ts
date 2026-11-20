@@ -110,7 +110,7 @@ export async function imageArchive(registry: Registry, repo: string, ref: string
 		m = await client.manifest(repo, child.digest);
 	}
 	const { config, layers } = m.json;
-	if (!config || !layers) throw new RegistryError(`${repo}:${ref} isn't an image Berth can package (${m.mediaType})`, 400);
+	if (!config || !layers) throw new RegistryError(`${repo}:${ref} isn't an image Wharf can package (${m.mediaType})`, 400);
 
 	const tag = ref.startsWith('sha256:') ? null : pullRef(registry.host, repo, ref);
 	const dockerManifest = Buffer.from(JSON.stringify([{ Config: blobPath(config.digest), RepoTags: tag ? [tag] : [], Layers: layers.map((l) => blobPath(l.digest)) }]));
@@ -166,7 +166,7 @@ export function archiveResponse(a: Archive, onDone?: (ok: boolean) => void): Res
 	};
 	a.stream.on('end', () => finish(true));
 	a.stream.on('error', (err) => {
-		console.warn('[berth] download failed:', err.message);
+		console.warn('[wharf] download failed:', err.message);
 		finish(false);
 	});
 	a.stream.on('close', () => finish(a.stream.readableEnded));

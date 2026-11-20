@@ -11,7 +11,7 @@ export const load: LayoutServerLoad = ({ locals }) => {
 		auth: locals.auth,
 		version: __APP_VERSION__,
 		viewer,
-		// Share link pages are public: they get nothing about the rest of Berth.
+		// Share link pages are public: they get nothing about the rest of Wharf.
 		registries: signedIn ? listRegistries() : [],
 		linkDefaults: { linkHours: s.linkHours, linkMaxDownloads: s.linkMaxDownloads }
 	};

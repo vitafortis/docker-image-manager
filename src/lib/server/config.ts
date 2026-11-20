@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 /** True when this process itself runs inside a container. */
 export const IN_CONTAINER = existsSync('/.dockerenv') || existsSync('/run/.containerenv');
 
-const env = (name: string): string | undefined => process.env[`BERTH_${name}`];
+const env = (name: string): string | undefined => process.env[`WHARF_${name}`];
 
 const dataDir = resolve(env('DATA_DIR') ?? './data');
 

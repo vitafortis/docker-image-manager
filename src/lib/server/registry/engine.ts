@@ -22,9 +22,9 @@ export function engineRaw(method: string, path: string, timeout = 30_000): Promi
 			reject(
 				new RegistryError(
 					err.code === 'ENOENT' || err.code === 'ECONNREFUSED'
-						? `No Docker Engine at ${config.dockerHost}: mount /var/run/docker.sock into Berth's container`
+						? `No Docker Engine at ${config.dockerHost}: mount /var/run/docker.sock into Wharf's container`
 						: err.code === 'EACCES'
-							? `Berth can't open ${config.dockerHost}: permission denied`
+							? `Wharf can't open ${config.dockerHost}: permission denied`
 							: `Docker Engine: ${err.message}`
 				)
 			)

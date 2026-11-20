@@ -165,6 +165,6 @@ function tick() {
 		const last = Math.max(r.syncedAt ? Date.parse(r.syncedAt) : 0, lastAuto.get(r.id) ?? 0);
 		if (now - last < syncMinutes * 60_000 || running.has(r.id)) continue;
 		lastAuto.set(r.id, now);
-		syncRegistry(r.id).catch((err) => console.warn(`[berth] sync of ${r.name} failed:`, err.message));
+		syncRegistry(r.id).catch((err) => console.warn(`[wharf] sync of ${r.name} failed:`, err.message));
 	}
 }

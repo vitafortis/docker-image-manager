@@ -21,7 +21,7 @@ export function handler<E>(fn: (event: E) => Promise<Response> | Response) {
 			// The registry's own status says what went wrong, but a 401 from a registry isn't ours:
 			// answering 401 would send the browser to the sign-in page.
 			if (err instanceof RegistryError) return json({ message: err.message }, { status: err.status === 404 ? 404 : err.status === 400 ? 400 : 502 });
-			console.error('[berth]', err);
+			console.error('[wharf]', err);
 			return json({ message: err instanceof Error ? err.message : String(err) }, { status: 500 });
 		}
 	};

@@ -20,6 +20,6 @@
 	}
 </script>
 
-<svelte:head><title>Sign in · Berth</title></svelte:head>
+<svelte:head><title>Sign in · Wharf</title></svelte:head>
 
 <AuthCard title="Welcome back" subtitle="Sign in to your image registries." cta="Sign in" onsubmit={login} />

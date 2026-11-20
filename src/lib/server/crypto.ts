@@ -9,13 +9,13 @@ const VERSION = 'v1';
 let cachedKey: Buffer | undefined;
 
 /**
- * The master key protects every stored credential. It comes from BERTH_SECRET_KEY when set,
+ * The master key protects every stored credential. It comes from WHARF_SECRET_KEY when set,
  * otherwise from a random 256-bit key file created (mode 0600) on first start.
  */
 function masterKey(): Buffer {
 	if (cachedKey) return cachedKey;
 	if (config.secretKey) {
-		cachedKey = scryptSync(config.secretKey, 'berth/master-key', 32);
+		cachedKey = scryptSync(config.secretKey, 'wharf/master-key', 32);
 		return cachedKey;
 	}
 	mkdirSync(config.dataDir, { recursive: true });

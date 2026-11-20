@@ -1,4 +1,4 @@
-# Berth
+# Wharf
 
 - SvelteKit 3 + Svelte 5 runes + Tailwind 4, built with adapter-node; `server.js` drops root and loads `build/index.js`.
 - The theme is the shared ·modern palette (pg-modern, octo-modern, debrief, Orbital) with primary hue 200. Keep `src/app.css` in step with those projects rather than inventing new tokens.

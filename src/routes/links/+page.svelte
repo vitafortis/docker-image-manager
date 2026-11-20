@@ -55,7 +55,7 @@
 	}
 </script>
 
-<svelte:head><title>Share links · Berth</title></svelte:head>
+<svelte:head><title>Share links · Wharf</title></svelte:head>
 
 <div class="h-full overflow-y-auto">
 	<PageHeader title="Share links" description="Downloads for people without a sign-in: each link has an expiry, a download limit, or both. Make one from any image.">

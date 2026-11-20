@@ -86,7 +86,7 @@
 	}
 </script>
 
-<svelte:head><title>Settings · Berth</title></svelte:head>
+<svelte:head><title>Settings · Wharf</title></svelte:head>
 
 <div class="h-full overflow-y-auto">
 	<PageHeader title="Settings" description="Syncing, share links, your account, and who can sign in." />
@@ -116,7 +116,7 @@
 				<div>
 					<label class="label" for="public">Public address</label>
 					<input id="public" class="input font-mono" placeholder={data.origin} disabled={!admin} bind:value={form.publicUrl} />
-					<p class="mt-1 text-xs text-muted-foreground">Where people you send links to reach Berth, e.g. through your reverse proxy. Blank: the address you're using now.</p>
+					<p class="mt-1 text-xs text-muted-foreground">Where people you send links to reach Wharf, e.g. through your reverse proxy. Blank: the address you're using now.</p>
 				</div>
 				<div class="grid gap-4 sm:grid-cols-2">
 					<div>

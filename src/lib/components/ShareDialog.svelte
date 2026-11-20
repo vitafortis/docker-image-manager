@@ -73,7 +73,7 @@
 	{#if result}
 		<div class="space-y-4">
 			<p class="text-[0.8125rem] text-muted-foreground">
-				Anyone with this link can download the image without signing in{result.link.maxDownloads === 1 ? ', once' : ''}. Copy it now: Berth keeps only a hash of it, so it can't be shown again.
+				Anyone with this link can download the image without signing in{result.link.maxDownloads === 1 ? ', once' : ''}. Copy it now: Wharf keeps only a hash of it, so it can't be shown again.
 			</p>
 			<CopyField value={result.url} />
 			<div>

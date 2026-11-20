@@ -55,7 +55,7 @@
 	async function remove(r: Registry) {
 		const ok = await confirmAction({
 			title: `Remove ${r.name}?`,
-			body: 'Berth forgets this registry, its index and its share links. Nothing in the registry itself is touched.',
+			body: 'Wharf forgets this registry, its index and its share links. Nothing in the registry itself is touched.',
 			confirmLabel: 'Remove',
 			danger: true
 		});
@@ -70,10 +70,10 @@
 	}
 </script>
 
-<svelte:head><title>Registries · Berth</title></svelte:head>
+<svelte:head><title>Registries · Wharf</title></svelte:head>
 
 <div class="h-full overflow-y-auto">
-	<PageHeader title="Registries" description="Where Berth finds images. Each one syncs on a schedule, or now with Sync.">
+	<PageHeader title="Registries" description="Where Wharf finds images. Each one syncs on a schedule, or now with Sync.">
 		{#snippet actions()}
 			{#if admin}<button class="btn btn-primary" onclick={() => ((editing = null), (dialog = true))}><Plus />Add a registry</button>{/if}
 		{/snippet}
@@ -96,7 +96,7 @@
 							items={[
 								{ label: 'Edit', icon: Pencil, onclick: () => edit(r) },
 								'separator',
-								{ label: 'Remove', hint: 'Forget it in Berth; the registry is untouched', icon: Trash2, danger: true, onclick: () => remove(r) }
+								{ label: 'Remove', hint: 'Forget it in Wharf; the registry is untouched', icon: Trash2, danger: true, onclick: () => remove(r) }
 							]}
 						>
 							{#snippet trigger({ toggle })}<button class="btn btn-ghost btn-icon btn-sm" aria-label="More" onclick={toggle}><Ellipsis /></button>{/snippet}

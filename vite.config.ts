@@ -8,7 +8,7 @@ const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 
 
 export default defineConfig({
 	// The image build passes the release version (see Dockerfile); local builds say -dev.
-	define: { __APP_VERSION__: JSON.stringify(process.env.BERTH_VERSION || `${pkg.version}-dev`) },
+	define: { __APP_VERSION__: JSON.stringify(process.env.WHARF_VERSION || `${pkg.version}-dev`) },
 	plugins: [
 		tailwindcss(),
 		sveltekit({

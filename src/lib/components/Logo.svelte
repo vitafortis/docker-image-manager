@@ -1,7 +1,7 @@
 <script lang="ts">
-	/** Berth: containers docked above the water line. */
-	let { size = 28 }: { size?: number } = $props();
-	// Gradient ids must be unique per instance; the logo appears more than once on some pages.
+	/** Wharf: a container on the quay above the water. The water moves unless `still`, or motion is turned off. */
+	let { size = 28, still = false }: { size?: number; still?: boolean } = $props();
+	// Gradient and clip ids must be unique per instance; the logo appears more than once on some pages.
 	const id = $props.id();
 </script>
 
@@ -11,15 +11,30 @@
 			<stop offset="0" stop-color="#17252c" />
 			<stop offset="1" stop-color="#0c1418" />
 		</linearGradient>
-		<linearGradient id="{id}-box" x1="0" y1="0" x2="0" y2="1">
-			<stop offset="0" stop-color="#9eeaf6" />
-			<stop offset="1" stop-color="#4cc3d9" />
-		</linearGradient>
+		<clipPath id="{id}-water"><rect x="5" y="21" width="22" height="6" /></clipPath>
 	</defs>
 	<rect width="32" height="32" rx="8" fill="url(#{id}-tile)" />
 	<rect x="0.5" y="0.5" width="31" height="31" rx="7.5" fill="none" stroke="#5fd4e8" stroke-opacity="0.25" />
-	<rect x="11.6" y="7.6" width="8.8" height="6.2" rx="1.3" fill="url(#{id}-box)" />
-	<rect x="6.8" y="14.8" width="8.8" height="6.2" rx="1.3" fill="url(#{id}-box)" opacity="0.85" />
-	<rect x="16.4" y="14.8" width="8.8" height="6.2" rx="1.3" fill="url(#{id}-box)" opacity="0.7" />
-	<path d="M6 25.2q2.5-1.7 5 0t5 0 5 0 5 0" fill="none" stroke="#5fd4e8" stroke-opacity="0.65" stroke-width="1.6" stroke-linecap="round" />
+	<rect x="7.5" y="7.4" width="17" height="9" rx="1.4" fill="#fff" />
+	<path d="M11.3 9.6v4.6M14.4 9.6v4.6M17.6 9.6v4.6M20.7 9.6v4.6" stroke="#17252c" stroke-opacity="0.45" stroke-width="1.2" stroke-linecap="round" />
+	<path d="M5.5 19.4h21" stroke="#5fd4e8" stroke-width="2.3" stroke-linecap="round" />
+	<g clip-path="url(#{id}-water)">
+		<path class={still ? '' : 'tide'} d="M6 24.6q2.5-1.6 5 0t5 0 5 0 5 0 5 0 5 0" fill="none" stroke="#5fd4e8" stroke-opacity="0.5" stroke-width="1.5" stroke-linecap="round" />
+	</g>
 </svg>
+
+<style>
+	.tide {
+		animation: tide 5s linear infinite;
+	}
+	@keyframes tide {
+		to {
+			transform: translateX(-10px);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.tide {
+			animation: none;
+		}
+	}
+</style>

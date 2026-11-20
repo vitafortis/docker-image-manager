@@ -4,7 +4,7 @@ import { hashPassword, randomToken, sha256 } from './crypto.ts';
 import { authSessionUser, countUsers, createAuthSession, createUser, deleteAuthSession, touchUserLogin } from './store.ts';
 import type { User } from '#lib/types.ts';
 
-export const SESSION_COOKIE = 'berth_session';
+export const SESSION_COOKIE = 'wharf_session';
 const SESSION_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 
 export type AuthState = 'disabled' | 'setup' | 'anonymous' | 'authenticated';
@@ -14,17 +14,17 @@ const OPEN_USER: User = { id: 'open', email: 'admin', name: 'Admin', role: 'admi
 
 let bootstrapped = false;
 
-/** BERTH_ADMIN_EMAIL + BERTH_ADMIN_PASSWORD create the first account, so headless installs skip setup. */
+/** WHARF_ADMIN_EMAIL + WHARF_ADMIN_PASSWORD create the first account, so headless installs skip setup. */
 function bootstrapAdmin() {
 	bootstrapped = true;
 	const b = config.bootstrapAdmin;
 	if (!b || countUsers() > 0) return;
 	if (b.password.length < 8) {
-		console.warn('[berth] BERTH_ADMIN_PASSWORD must be at least 8 characters; showing the setup screen instead.');
+		console.warn('[wharf] WHARF_ADMIN_PASSWORD must be at least 8 characters; showing the setup screen instead.');
 		return;
 	}
 	createUser({ email: b.email, name: b.name, passwordHash: hashPassword(b.password) });
-	console.log(`[berth] Created account ${b.email} from BERTH_ADMIN_EMAIL.`);
+	console.log(`[wharf] Created account ${b.email} from WHARF_ADMIN_EMAIL.`);
 }
 
 export function authenticate(cookies: Cookies): { state: AuthState; user: User | null } {

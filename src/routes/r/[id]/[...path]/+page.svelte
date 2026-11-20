@@ -85,7 +85,7 @@
 	const fmtHistory = (s: string) => s.replace(/^\/bin\/sh -c #\(nop\)\s*/, '').replace(/^\/bin\/sh -c /, 'RUN ').trim();
 </script>
 
-<svelte:head><title>{data.view === 'image' ? `${data.repo}:${data.ref}` : data.view === 'repo' ? data.repo : r.name} · Berth</title></svelte:head>
+<svelte:head><title>{data.view === 'image' ? `${data.repo}:${data.ref}` : data.view === 'repo' ? data.repo : r.name} · Wharf</title></svelte:head>
 
 <div class="h-full overflow-y-auto">
 	<div class="relative">
@@ -166,7 +166,7 @@
 				<EmptyState
 					icon={r.status === 'error' ? CircleAlert : FolderOpen}
 					title={r.status === 'error' ? 'The last sync failed' : r.syncedAt ? 'No repositories' : 'Not synced yet'}
-					body={r.lastError ?? (r.syncedAt ? 'The registry has none Berth can see. Name some in the registry settings if it can’t list them.' : 'Sync to index its images.')}
+					body={r.lastError ?? (r.syncedAt ? 'The registry has none Wharf can see. Name some in the registry settings if it can’t list them.' : 'Sync to index its images.')}
 				/>
 			{/if}
 		</div>

@@ -8,8 +8,8 @@ COPY package.json pnpm-lock.yaml .npmrc ./
 RUN pnpm install --frozen-lockfile
 COPY . .
 # The release version shown in the sidebar (the image workflow passes it; local builds say -dev).
-ARG BERTH_VERSION=
-ENV BERTH_VERSION=$BERTH_VERSION
+ARG WHARF_VERSION=
+ENV WHARF_VERSION=$WHARF_VERSION
 RUN pnpm build && pnpm prune --prod
 
 FROM node:24-alpine
@@ -17,9 +17,9 @@ LABEL org.opencontainers.image.source=https://github.com/vitafortis/docker-image
 WORKDIR /app
 ENV NODE_ENV=production \
     PORT=3000 \
-    BERTH_DATA_DIR=/data \
+    WHARF_DATA_DIR=/data \
     NODE_OPTIONS=--disable-warning=ExperimentalWarning \
-    BERTH_RUN_AS=node
+    WHARF_RUN_AS=node
 COPY --from=build /app/build ./build
 COPY --from=build /app/node_modules ./node_modules
 COPY package.json server.js ./

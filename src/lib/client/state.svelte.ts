@@ -22,7 +22,7 @@ export function setTheme(value: 'dark' | 'light') {
 	theme.value = value;
 	document.documentElement.dataset.theme = value;
 	try {
-		localStorage.setItem('berth-theme', value);
+		localStorage.setItem('wharf-theme', value);
 	} catch {}
 }
 

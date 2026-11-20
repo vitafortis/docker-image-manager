@@ -150,7 +150,7 @@ export type Settings = {
 	syncMinutes: number;
 	/** Tags per repository to index, newest first where the registry says which are newest. */
 	maxTagsPerRepo: number;
-	/** The address share links use, e.g. https://berth.example.com (blank: the address you're using). */
+	/** The address share links use, e.g. https://wharf.example.com (blank: the address you're using). */
 	publicUrl: string;
 	/** Defaults for new share links. */
 	linkHours: number;

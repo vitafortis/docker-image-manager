@@ -17,7 +17,7 @@ export const KINDS: Record<RegistryKind, KindMeta> = {
 	ecr: { label: 'Amazon ECR', blurb: 'Private repositories in one account and region, with access keys or the instance role.', canDelete: true },
 	dockerhub: { label: 'Docker Hub', blurb: 'Your namespaces (users or orgs), plus any public repositories you name.', canDelete: false },
 	ghcr: { label: 'GitHub Packages', blurb: 'ghcr.io container packages of a user or organization, with a token that can read packages.', canDelete: false },
-	docker: { label: 'Docker host', blurb: 'The images on the Docker Engine Berth runs on, through its socket.', canDelete: true }
+	docker: { label: 'Docker host', blurb: 'The images on the Docker Engine Wharf runs on, through its socket.', canDelete: true }
 };
 
 export const KIND_ORDER: RegistryKind[] = ['registry', 'ecr', 'dockerhub', 'ghcr', 'docker'];

@@ -28,7 +28,7 @@ let handle: DatabaseSync | undefined;
 function db(): DatabaseSync {
 	if (handle) return handle;
 	mkdirSync(config.dataDir, { recursive: true, mode: 0o700 });
-	const dbPath = join(config.dataDir, 'berth.db');
+	const dbPath = join(config.dataDir, 'wharf.db');
 	handle = new DatabaseSync(dbPath);
 	try {
 		chmodSync(dbPath, 0o600);

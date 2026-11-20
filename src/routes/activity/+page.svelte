@@ -28,7 +28,7 @@
 	const meta = (a: string) => ACTIONS[a] ?? { label: a, icon: History };
 </script>
 
-<svelte:head><title>Activity · Berth</title></svelte:head>
+<svelte:head><title>Activity · Wharf</title></svelte:head>
 
 <div class="h-full overflow-y-auto">
 	<PageHeader title="Activity" description="Syncs, downloads, share links and changes, newest first." />

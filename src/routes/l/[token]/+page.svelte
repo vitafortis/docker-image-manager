@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.image} · Berth</title>
+	<title>{data.image} · Wharf</title>
 	<meta name="robots" content="noindex" />
 </svelte:head>
 
@@ -27,7 +27,7 @@
 		<div class="mb-6 flex items-center gap-3">
 			<Logo size={36} />
 			<div class="min-w-0">
-				<p class="text-xs text-muted-foreground">Shared with you through Berth</p>
+				<p class="text-xs text-muted-foreground">Shared with you through Wharf</p>
 				<h1 class="truncate font-mono text-[0.9375rem] font-semibold tracking-tight" title={data.image}>{data.image}</h1>
 			</div>
 		</div>
